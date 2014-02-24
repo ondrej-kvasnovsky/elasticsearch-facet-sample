@@ -1,3 +1,22 @@
+=======
+elasticsearch-facet-sample
+==========================
+
+A simple facet just to help with learning. It makes total sum of double values.
+
+    GET /myindex/mytype/_search
+    {
+      
+      "facets" : {
+            "places" : { 
+                "example" : {
+                    "field" : "cogs",
+                    "factor" : 0.5
+                }
+            }
+        }
+    }
+
 1. Make .jar package
 
     mvn package
@@ -15,4 +34,6 @@
     bin/plugin --remove example-facet
 
     bin/plugin --url file:///Users/ondrej/projects/elasticsearch-facet/target/elasticsearch-facet-1.0-SNAPSHOT.jar --install example-facet
+
+
 
